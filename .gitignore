@@ -1,0 +1,5 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore .DS_Store files on Mac
+.DS_Store
