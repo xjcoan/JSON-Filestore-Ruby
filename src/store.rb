@@ -1,8 +1,7 @@
 require 'json'
 # Class Store defines database funcitonality
 class Store
-  attr_reader :name
-  attr_accessor :path, :data
+  attr_accessor :name, :data, :path
   # Create Database Name/File Name
   def initialize(name, data = {}, path = __dir__ + '/../datastore/')
     @name = name
@@ -14,7 +13,9 @@ class Store
   def write
     File.open(@path + "#{@name}.json", 'w') do |f|
       f.write(@data.to_json)
+      true
     end
+    false
   end
 
   # Read data from file if file exists
@@ -22,15 +23,21 @@ class Store
     if File.file?(@path + "#{@name}.json")
       file = File.read(@path + "#{@name}.json")
       @data = JSON.parse(file)
-      @data
+      true
     else
-      {} # returns blank hash if file not present
+      # Return false if can't read file/doesn't exist
+      false
     end
   end
 
   # Return value from dataset with given key. Will return nil if key not found
-  def find(key)
+  def value(key)
     @data[key]
+  end
+
+  # Check if key present in dataset
+  def key_present?(key)
+    @data.has_key?(key)
   end
 
   # Return all keys contained in hash set
