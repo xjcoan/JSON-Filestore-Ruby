@@ -14,4 +14,4 @@ There are two folders: src and datastore
 * `db_cli.rb` - a command line tool to manage your databases, tables/key-value pairs, etc.
 * `store.rb` - contains all the logic for storing and retrieving data from your databases
 
-`/datastore/`` contains the JSON files of your databases, created from the CLI or store.
+`/datastore/` contains the JSON files of your databases, created from the CLI or store.

@@ -27,4 +27,14 @@ class Store
       {} # returns blank hash if file not present
     end
   end
+
+  # Return value from dataset with given key. Will return nil if key not found
+  def find(key)
+    @data[key]
+  end
+
+  # Return all keys contained in hash set
+  def keys
+    @data.keys
+  end
 end
