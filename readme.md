@@ -19,12 +19,14 @@ To initiate an datastore instance, call Store.new.  The three arguments required
 Note that creating an instance of Store does NOT save the data.  You will have to call the method `write` on your instance to do so.
 
 Store contains the following methods:
-* `write` - Saves your data to the filename and path specified. Returns true/false if saved correctly/failed.
-* `read` - Attempts to find an existing JSON store with your specified name and path and load data from the file into an instance variable.  This will overwrite any data existing in your instantiated Store.  Returns true/false if the file was read or not read, respectively.
+* `write` - Saves your data to the filename and path specified.
+* `read` - Attempts to find an existing JSON store with your specified name and path and load data from the file into an instance variable.  This will overwrite any data existing in your instantiated Store.
+* `add(key, value)` - adds a Key/Value pair to the data.
+Each method contains above also contains a verification method (e.g. `read_and_verify` that will return true/false when successful)
 
 The following methods are essentially aliases for standard ruby hash methods, but work off of the data stored in your Store object. This way you don't need to save a duplicate of your data in your program's runtime.
 * `value(key)` - Returns the value associated with a key.
-* `key_present?(key)` - Returns true/false if the Store object instance contains a key.
+* `contains?(key)` - Returns true/false if the Store object instance contains a key.
 * `keys` Returns all keys in the Store object's instanced data
 
 The following instance variables all have getters and setters:
