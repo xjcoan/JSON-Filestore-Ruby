@@ -1,4 +1,4 @@
-# RubyNoSQL
+# JSON-Filestore-Ruby
 A pseudo-nosql database / JSON file storage solution built in Ruby.
 Authored by yours truly, X J. Coan
 
